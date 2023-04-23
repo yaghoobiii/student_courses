@@ -1,8 +1,24 @@
 import datetime
+import sqlite3
+from sqlite3.dbapi2 import Connection
+from typing import Optional
 
 import six
-import typing
+
 from swagger_server import type_util
+
+if __name__ == '__main__':
+    db: Optional[Connection] = None
+
+
+def create_db():
+    global db
+    db = sqlite3.connect("studentcourse.db", check_same_thread=False)
+
+
+def destroy_db():
+    global db
+    if db is not None: db.close()
 
 
 def _deserialize(data, klass):

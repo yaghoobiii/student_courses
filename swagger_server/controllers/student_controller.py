@@ -1,8 +1,5 @@
-import connexion
-import six
-
 from swagger_server.models.login_status import LoginStatus  # noqa: E501
-from swagger_server import util
+from swagger_server.util import db
 
 
 def login(password):  # noqa: E501

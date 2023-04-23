@@ -1,0 +1,210 @@
+openapi: 3.0.0
+info:
+  title: student-courses
+  description: The API for the Maryam's homework
+  version: 1.0.0
+servers:
+- url: /
+paths:
+  /login:
+    post:
+      tags:
+      - Student
+      summary: Login interface for students
+      operationId: login
+      parameters:
+      - name: password
+        in: query
+        required: true
+        style: form
+        explode: true
+        schema:
+          type: string
+      responses:
+        "200":
+          description: The student has logged into their account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LoginStatus'
+      x-openapi-router-controller: swagger_server.controllers.student_controller
+  /courses:
+    get:
+      tags:
+      - Course
+      summary: Get all the courses
+      operationId: courses
+      responses:
+        "200":
+          description: ok
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Course'
+                x-content-type: application/json
+      x-openapi-router-controller: swagger_server.controllers.course_controller
+  /courses/{courseId}:
+    get:
+      summary: Get a specific course by ID
+      operationId: course_by_id
+      parameters:
+      - name: courseId
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Course'
+      x-openapi-router-controller: swagger_server.controllers.default_controller
+  /selections/{studentId}:
+    get:
+      summary: Get a student's selections
+      operationId: selection_by_student
+      parameters:
+      - name: studentId
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Selection'
+      x-openapi-router-controller: swagger_server.controllers.default_controller
+  /selections/create:
+    post:
+      summary: Create a selection
+      operationId: insert_selection
+      parameters:
+      - name: student
+        in: query
+        required: true
+        style: form
+        explode: true
+        schema:
+          type: integer
+          format: int32
+      - name: course
+        in: query
+        required: true
+        style: form
+        explode: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: ok
+        "500":
+          description: invalid
+      x-openapi-router-controller: swagger_server.controllers.default_controller
+  /selections/destroy:
+    post:
+      summary: Destroy a selection
+      operationId: destroy_selection
+      parameters:
+      - name: student
+        in: query
+        required: true
+        style: form
+        explode: true
+        schema:
+          type: integer
+          format: int32
+      - name: course
+        in: query
+        required: true
+        style: form
+        explode: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: ok
+        "500":
+          description: invalid
+      x-openapi-router-controller: swagger_server.controllers.default_controller
+components:
+  schemas:
+    User:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        name:
+          type: string
+        type:
+          type: integer
+          format: int32
+      example:
+        name: name
+        id: 0
+        type: 6
+    LoginStatus:
+      type: object
+      properties:
+        token:
+          type: string
+        user:
+          $ref: '#/components/schemas/User'
+      example:
+        user:
+          name: name
+          id: 0
+          type: 6
+        token: token
+    Course:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        name:
+          type: string
+        teacher_name:
+          type: string
+        weak_day:
+          type: integer
+          format: int32
+        start_time:
+          type: string
+        end_time:
+          type: string
+      example:
+        start_time: start_time
+        teacher_name: teacher_name
+        weak_day: 6
+        name: name
+        end_time: end_time
+        id: 0
+    Selection:
+      type: object
+      properties:
+        student:
+          type: integer
+          format: int32
+        course:
+          type: integer
+          format: int32
+      example:
+        student: 0
+        course: 6
+

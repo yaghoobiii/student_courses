@@ -5,20 +5,6 @@ from swagger_server.models.selection import Selection  # noqa: E501
 from swagger_server.util import db
 
 
-def course_by_id(course_id):  # noqa: E501
-    """Get a specific course by ID
-
-     # noqa: E501
-
-    :param course_id:
-    :type course_id: int
-
-    :rtype: Course
-    """
-    i = db.cursor().execute("SELECT * FROM course WHERE id = ?", [course_id]).fetchone()
-    return Course(i[0], i[1], i[2], i[3], i[4], i[5])  # util.deserialize_model(i, Course)
-
-
 def destroy_selection(student, course):  # noqa: E501
     """Destroy a selection
 

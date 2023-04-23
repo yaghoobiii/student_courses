@@ -5,24 +5,12 @@ from __future__ import absolute_import
 from flask import json
 from six import BytesIO
 
-from swagger_server.models.course import Course  # noqa: E501
 from swagger_server.models.selection import Selection  # noqa: E501
 from swagger_server.test import BaseTestCase
 
 
-class TestDefaultController(BaseTestCase):
-    """DefaultController integration test stubs"""
-
-    def test_course_by_id(self):
-        """Test case for course_by_id
-
-        Get a specific course by ID
-        """
-        response = self.client.open(
-            '/courses/{course_id}'.format(course_id=3),
-            method='GET')
-        self.assert200(response,
-                       'Response body is : ' + response.data.decode('utf-8'))
+class TestSelectionController(BaseTestCase):
+    """SelectionController integration test stubs"""
 
     def test_destroy_selection(self):
         """Test case for destroy_selection
@@ -66,5 +54,4 @@ class TestDefaultController(BaseTestCase):
 
 if __name__ == '__main__':
     import unittest
-
     unittest.main()

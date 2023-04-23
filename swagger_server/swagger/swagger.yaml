@@ -2,14 +2,28 @@ openapi: 3.0.0
 info:
   title: student-courses
   description: The API for the Maryam's homework
-  version: 1.0.2
+  version: 2.0.0
 servers:
 - url: /
 paths:
+  /:
+    get:
+      tags:
+      - HTML
+      summary: The main INDEX.html
+      operationId: root_get
+      responses:
+        "200":
+          description: ok
+          content:
+            text/html:
+              schema:
+                $ref: '#/components/schemas/HTML'
+      x-openapi-router-controller: swagger_server.controllers.html_controller
   /login:
     post:
       tags:
-      - Student
+      - Auth
       summary: Login interface for students
       operationId: login
       parameters:
@@ -27,13 +41,21 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/LoginStatus'
-      x-openapi-router-controller: swagger_server.controllers.student_controller
+      x-openapi-router-controller: swagger_server.controllers.auth_controller
   /courses:
     get:
       tags:
       - Course
       summary: Get all the courses
       operationId: courses
+      parameters:
+      - name: token
+        in: cookie
+        required: true
+        style: form
+        explode: true
+        schema:
+          type: string
       responses:
         "200":
           description: ok
@@ -47,6 +69,8 @@ paths:
       x-openapi-router-controller: swagger_server.controllers.course_controller
   /courses/{course_id}:
     get:
+      tags:
+      - Course
       summary: Get a specific course by ID
       operationId: course_by_id
       parameters:
@@ -58,6 +82,13 @@ paths:
         schema:
           type: integer
           format: int32
+      - name: token
+        in: cookie
+        required: true
+        style: form
+        explode: true
+        schema:
+          type: string
       responses:
         "200":
           description: ok
@@ -65,9 +96,11 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Course'
-      x-openapi-router-controller: swagger_server.controllers.default_controller
+      x-openapi-router-controller: swagger_server.controllers.course_controller
   /selections/{student_id}:
     get:
+      tags:
+      - Selection
       summary: Get a student's selections
       operationId: selection_by_student
       parameters:
@@ -79,16 +112,28 @@ paths:
         schema:
           type: integer
           format: int32
+      - name: token
+        in: cookie
+        required: true
+        style: form
+        explode: true
+        schema:
+          type: string
       responses:
         "200":
           description: ok
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Selection'
-      x-openapi-router-controller: swagger_server.controllers.default_controller
+                type: array
+                items:
+                  $ref: '#/components/schemas/Selection'
+                x-content-type: application/json
+      x-openapi-router-controller: swagger_server.controllers.selection_controller
   /selections/create:
     post:
+      tags:
+      - Selection
       summary: Create a selection
       operationId: insert_selection
       parameters:
@@ -108,14 +153,23 @@ paths:
         schema:
           type: integer
           format: int32
+      - name: token
+        in: cookie
+        required: true
+        style: form
+        explode: true
+        schema:
+          type: string
       responses:
         "200":
           description: ok
         "500":
           description: invalid
-      x-openapi-router-controller: swagger_server.controllers.default_controller
+      x-openapi-router-controller: swagger_server.controllers.selection_controller
   /selections/destroy:
     post:
+      tags:
+      - Selection
       summary: Destroy a selection
       operationId: destroy_selection
       parameters:
@@ -135,14 +189,24 @@ paths:
         schema:
           type: integer
           format: int32
+      - name: token
+        in: cookie
+        required: true
+        style: form
+        explode: true
+        schema:
+          type: string
       responses:
         "200":
           description: ok
         "500":
           description: invalid
-      x-openapi-router-controller: swagger_server.controllers.default_controller
+      x-openapi-router-controller: swagger_server.controllers.selection_controller
 components:
   schemas:
+    HTML:
+      type: string
+      example: <html></html>
     User:
       type: object
       properties:

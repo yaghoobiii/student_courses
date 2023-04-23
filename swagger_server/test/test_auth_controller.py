@@ -9,8 +9,8 @@ from swagger_server.models.login_status import LoginStatus  # noqa: E501
 from swagger_server.test import BaseTestCase
 
 
-class TestStudentController(BaseTestCase):
-    """StudentController integration test stubs"""
+class TestAuthController(BaseTestCase):
+    """AuthController integration test stubs"""
 
     def test_login(self):
         """Test case for login
@@ -28,5 +28,4 @@ class TestStudentController(BaseTestCase):
 
 if __name__ == '__main__':
     import unittest
-
     unittest.main()

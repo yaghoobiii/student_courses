@@ -1,5 +1,5 @@
 from swagger_server.models.login_status import LoginStatus  # noqa: E501
-from swagger_server.util import db
+from swagger_server import util
 
 
 def login(password):  # noqa: E501
@@ -7,12 +7,9 @@ def login(password):  # noqa: E501
 
      # noqa: E501
 
-    :param password: 
+    :param password:
     :type password: str
 
     :rtype: LoginStatus
     """
-    # TODO
-    vet: list[password] = list()
-
-    return 'vet'
+    return 'do some magic!'

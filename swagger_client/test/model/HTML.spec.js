@@ -29,26 +29,14 @@
   var instance;
 
   describe('(package)', function() {
-    describe('Selection', function() {
+    describe('HTML', function() {
       beforeEach(function() {
-        instance = new StudentCourses.Selection();
+        instance = new StudentCourses.HTML();
       });
 
-      it('should create an instance of Selection', function() {
-        // TODO: update the code to test Selection
-        expect(instance).to.be.a(StudentCourses.Selection);
-      });
-
-      it('should have the property student (base name: "student")', function() {
-        // TODO: update the code to test the property student
-        expect(instance).to.have.property('student');
-        // expect(instance.student).to.be(expectedValueLiteral);
-      });
-
-      it('should have the property course (base name: "course")', function() {
-        // TODO: update the code to test the property course
-        expect(instance).to.have.property('course');
-        // expect(instance.course).to.be(expectedValueLiteral);
+      it('should create an instance of HTML', function() {
+        // TODO: update the code to test HTML
+        expect(instance).to.be.a(StudentCourses.HTML);
       });
 
     });

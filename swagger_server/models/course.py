@@ -14,7 +14,9 @@ class Course(Model):
 
     Do not edit the class manually.
     """
-    def __init__(self, id: int=None, name: str=None, teacher_name: str=None, weak_day: int=None, start_time: str=None, end_time: str=None):  # noqa: E501
+
+    def __init__(self, id: int = None, name: str = None, teacher_name: str = None, weak_day: int = None,
+                 start_time: str = None, end_time: str = None):  # noqa: E501
         """Course - a model defined in Swagger
 
         :param id: The id of this Course.  # noqa: E501

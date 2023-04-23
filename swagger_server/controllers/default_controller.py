@@ -52,7 +52,7 @@ def insert_selection(student, course):  # noqa: E501
 
 
 def selection_by_student(student_id):  # noqa: E501
-    """Get a student&#x27;s selections
+    """Get a student's selections
 
      # noqa: E501
 

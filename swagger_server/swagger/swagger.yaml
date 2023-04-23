@@ -2,7 +2,7 @@ openapi: 3.0.0
 info:
   title: student-courses
   description: The API for the Maryam's homework
-  version: 1.0.0
+  version: 1.0.2
 servers:
 - url: /
 paths:
@@ -45,12 +45,12 @@ paths:
                   $ref: '#/components/schemas/Course'
                 x-content-type: application/json
       x-openapi-router-controller: swagger_server.controllers.course_controller
-  /courses/{courseId}:
+  /courses/{course_id}:
     get:
       summary: Get a specific course by ID
       operationId: course_by_id
       parameters:
-      - name: courseId
+      - name: course_id
         in: path
         required: true
         style: simple
@@ -66,12 +66,12 @@ paths:
               schema:
                 $ref: '#/components/schemas/Course'
       x-openapi-router-controller: swagger_server.controllers.default_controller
-  /selections/{studentId}:
+  /selections/{student_id}:
     get:
       summary: Get a student's selections
       operationId: selection_by_student
       parameters:
-      - name: studentId
+      - name: student_id
         in: path
         required: true
         style: simple

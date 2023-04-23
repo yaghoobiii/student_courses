@@ -19,7 +19,7 @@ class TestDefaultController(BaseTestCase):
         Get a specific course by ID
         """
         response = self.client.open(
-            '/courses/{courseId}'.format(course_id=56),
+            '/courses/{course_id}'.format(course_id=3),
             method='GET')
         self.assert200(response,
                        'Response body is : ' + response.data.decode('utf-8'))
@@ -58,7 +58,7 @@ class TestDefaultController(BaseTestCase):
         Get a student's selections
         """
         response = self.client.open(
-            '/selections/{studentId}'.format(student_id=56),
+            '/selections/{student_id}'.format(student_id=56),
             method='GET')
         self.assert200(response,
                        'Response body is : ' + response.data.decode('utf-8'))
@@ -66,4 +66,5 @@ class TestDefaultController(BaseTestCase):
 
 if __name__ == '__main__':
     import unittest
+
     unittest.main()

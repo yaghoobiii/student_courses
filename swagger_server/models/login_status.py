@@ -15,7 +15,8 @@ class LoginStatus(Model):
 
     Do not edit the class manually.
     """
-    def __init__(self, token: str=None, user: User=None):  # noqa: E501
+
+    def __init__(self, token: str = None, user: User = None):  # noqa: E501
         """LoginStatus - a model defined in Swagger
 
         :param token: The token of this LoginStatus.  # noqa: E501

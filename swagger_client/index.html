@@ -1,6 +1,8 @@
 
 <!DOCTYPE html>
 <html>
+<html dir = "rtl" lang="fa">
+<meta charset="UTF-8">
 <style>
 body {font-family: Arial, Helvetica, sans-serif;}
 * {box-sizing: border-box}
@@ -33,7 +35,7 @@ button {
   margin: 8px 0;
   border: none;
   cursor: pointer;
-  width: 100%;
+  width: 50%;
   opacity: 0.9;
 }
 
@@ -46,7 +48,7 @@ button:hover {
 
 /* Float cancel and signup buttons and add an equal width */
  .signInbtn {
-  float: left;
+  float: right;
   width: 50%;
 }
 
@@ -65,7 +67,7 @@ button:hover {
 /* Change styles for cancel button and signup button on extra small screens */
 @media screen and (max-width: 300px) {
   .signInbtn {
-     width: 100%;
+     width: 50%;
   }
 }
 </style>
@@ -83,18 +85,19 @@ button:hover {
     <label for="psw"><b>Password</b></label>
     <input type="password" placeholder="Enter Password" name="psw" required>
 
-    <label for="psw-repeat"><b>Repeat Password</b></label>
-    <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+
 
 
     <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
 
     <div class="clearfix">
 
-      <button type="submit" class="signInbtn">Sign Up</button>
+      <button type="submit" class="signInbtn">Sign In</button>
     </div>
   </div>
 </form>
 
 </body>
 </html>
+</html>
+

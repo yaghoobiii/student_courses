@@ -1,13 +1,11 @@
-body{
+body {
     margin: 0;
-    padding:0;
-    background: url("./university.jpg");
-    background-position: center;
+    padding: 0;
+    background: url("img/university.jpg") center;
     font-family: sans-serif;
-
-
 }
-.loginbox{
+
+#login_box {
     width: 320px;
     height: 420px;
     background: #000;
@@ -15,37 +13,39 @@ body{
     top: 50%;
     left: 50%;
     position: absolute;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     box-sizing: border-box;
     padding: 70px 30px;
-
 }
-icon-btn{
+
+#user_icon {
     width: 100px;
     height: 100px;
     border-radius: 50%;
     position: absolute;
-
     top: -50px;
-    left:calc(50% - 50px) ;
+    left: calc(50% - 50px);
 }
-h1{
-    margin:0 ;
+
+h1 {
+    margin: 0;
     padding: 0 0 20px;
     text-align: center;
     font-size: 22px;
 }
-.loginbox p{
+
+#login_box p {
     margin: 0;
     padding: 0;
-    font-weight:bold;
+    font-weight: bold;
 }
-.loginbox input{
+
+#login_box input {
     width: 100%;
     margin-bottom: 20px;
 }
-.loginbox input[type="text"],input[type="password"]
-{
+
+#login_box input[type="text"], input[type="password"] {
     border: none;
     border-bottom: 1px solid #ffffff;
     background: transparent;
@@ -54,19 +54,19 @@ h1{
     color: #ffffff;
     font-size: 16px;
 }
-.loginbox input[type="submit"]
-{
+
+#login_box input[type="submit"] {
     border: none;
     outline: none;
     height: 40px;
-    background:rebeccapurple;
+    background: rebeccapurple;
     color: #ffffff;
     font-size: 18px;
     border-radius: 20px;
 }
-.loginbox input[type="submit"]:hover
-{
+
+#login_box input[type="submit"]:hover {
     cursor: pointer;
-    background:gray;
+    background: gray;
     color: #000000;
 }

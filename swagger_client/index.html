@@ -1,23 +1,38 @@
-<html>
+<!DOCTYPE html>
+<html lang="fa">
 <head>
-    <title>login student </title>
-<link rel="stylesheet" type="text/css" href="styles.css">
-
-    <body>
-<div class="loginbox">
-    <img src="./icons1-user-default-64.png" class="icon-btn">
-    <h1>Login Here</h1>
-    <form>
-        <p>Username</p>
-        <input type="text" name="" placeholder="Enter Username">
-        <p>Password</p>
-        <input type="password" name="" placeholder="Enter Password">
-        <input type="Submit" name="" value="Login">
-
-    </form>
-
-
-</div>
-</body>
+  <meta charset="UTF-8">
+  <title>ورود دانشجویان</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <script type="text/javascript" src="./js/misc/jquery-3.6.4.min.js"></script>
 </head>
+<body>
+<div id="login_box">
+  <img src="img/user.png" id="user_icon">
+  <h1>Login Here</h1>
+  <form id="login" action="/login" method="post">
+    <label for="user">شناسه</label>
+    <input type="text" id="user" name="user_id" placeholder="Enter Username">
+    <label for="pass">رمز عبور</label>
+    <input type="password" id="pass" name="password" placeholder="Enter Password">
+    <input type="submit" value="Login">
+  </form>
+</div>
+<script type="text/javascript">
+    $("#login").submit(function (e) {
+        e.preventDefault(); // avoid to execute the actual submit of the form.
+        $.ajax({
+            type: "POST",
+            url: $(this).attr('action'),
+            data: $(this).serialize(), // serializes the form's elements.
+            success: function (data) {
+                alert(data); // show response from the PYTHON script.
+            },
+            error: function (e) {
+                alert(JSON.stringify(e));
+            }
+        });
+    });
+</script>
+</body>
 </html>

@@ -5,7 +5,7 @@ from swagger_server.models.selection import Selection  # noqa: E501
 from swagger_server.util import db
 
 
-def destroy_selection(student, course):  # noqa: E501
+def destroy_selection(student, course, token):  # noqa: E501
     """Destroy a selection
 
      # noqa: E501
@@ -14,6 +14,8 @@ def destroy_selection(student, course):  # noqa: E501
     :type student: int
     :param course: 
     :type course: int
+    :param token:
+    :type token: str
 
     :rtype: None
     """
@@ -21,7 +23,7 @@ def destroy_selection(student, course):  # noqa: E501
     return "ok"
 
 
-def insert_selection(student, course):  # noqa: E501
+def insert_selection(student, course, token):  # noqa: E501
     """Create a selection
 
      # noqa: E501
@@ -30,6 +32,8 @@ def insert_selection(student, course):  # noqa: E501
     :type student: int
     :param course: 
     :type course: int
+    :param token:
+    :type token: str
 
     :rtype: None
     """
@@ -37,17 +41,19 @@ def insert_selection(student, course):  # noqa: E501
     return "ok"
 
 
-def selection_by_student(student_id):  # noqa: E501
+def selection_by_student(student_id, token):  # noqa: E501
     """Get a student's selections
 
      # noqa: E501
 
-    :param student_id: 
+    :param student_id:
     :type student_id: int
+    :param token:
+    :type token: str
 
-    :rtype: Selection
+    :rtype: List[Selection]
     """
     ret: List[Selection] = list()
     for i in db.cursor().execute("SELECT * FROM selection WHERE student = ?", [student_id]).fetchall():
         ret.append(Selection(i[0], i[1]))  # util.deserialize_model(i, Selection)
-    return ret  # FIXME
+    return ret

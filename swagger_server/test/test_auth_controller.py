@@ -17,7 +17,8 @@ class TestAuthController(BaseTestCase):
 
         Login interface for students
         """
-        query_string = [('password', 'password_example')]
+        query_string = [('user_id', 'user_id_example'),
+                        ('password', 'password_example')]
         response = self.client.open(
             '/login',
             method='POST',

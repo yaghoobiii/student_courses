@@ -13,7 +13,7 @@
  *
  */
 import superagent from "./node_modules/superagent/dist/superagent";
-import "./node_modules/qs/lib/stringify";
+import querystring from "./node_modules/query-string/index";
 
 /**
 * @module ApiClient
@@ -419,7 +419,7 @@ export class ApiClient {
         }
 
         if (contentType === 'application/x-www-form-urlencoded') {
-            request.send(stringify(this.normalizeParams(formParams)));
+            request.send(querystring.stringify(this.normalizeParams(formParams)));
         } else if (contentType == 'multipart/form-data') {
             var _formParams = this.normalizeParams(formParams);
             for (var key in _formParams) {

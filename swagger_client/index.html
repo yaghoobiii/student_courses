@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <title>ورود دانشجویان</title>
   <link rel="stylesheet" type="text/css" href="styles.css">
-  <script type="text/javascript" src="./js/misc/jquery-3.6.4.min.js"></script>
+  <!--suppress HtmlUnknownTarget -->
+  <script type="text/javascript" src="./js/misc/jquery-3.6.4.min"></script>
 </head>
 <body>
 <div id="login_box">
@@ -18,7 +19,7 @@
     <input type="button" id="login" value="Login">
   </form>
 </div>
-<script type="module">
+<script type="module">// cd swagger_client/js; npm install
     import {AuthApi, ApiClient} from "./js/index";
 
     let api = new AuthApi(new ApiClient());

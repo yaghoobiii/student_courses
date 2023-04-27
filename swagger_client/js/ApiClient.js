@@ -12,8 +12,8 @@
  * Do not edit the class manually.
  *
  */
-import superagent from "superagent";
-import querystring from "querystring";
+import superagent from "./node_modules/superagent/dist/superagent";
+import "./node_modules/qs/lib/stringify";
 
 /**
 * @module ApiClient
@@ -419,7 +419,7 @@ export class ApiClient {
         }
 
         if (contentType === 'application/x-www-form-urlencoded') {
-            request.send(querystring.stringify(this.normalizeParams(formParams)));
+            request.send(stringify(this.normalizeParams(formParams)));
         } else if (contentType == 'multipart/form-data') {
             var _formParams = this.normalizeParams(formParams);
             for (var key in _formParams) {

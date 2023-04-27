@@ -2,10 +2,6 @@
 
 from __future__ import absolute_import
 
-from flask import json
-from six import BytesIO
-
-from swagger_server.models.login_status import LoginStatus  # noqa: E501
 from swagger_server.test import BaseTestCase
 
 
@@ -17,11 +13,11 @@ class TestAuthController(BaseTestCase):
 
         Login interface for students
         """
-        query_string = [('user_id', 'user_id_example'),
+        query_string = [('user_id', 111),
                         ('password', 'password_example')]
         response = self.client.open(
             '/login',
-            method='POST',
+            method='GET',
             query_string=query_string)
         self.assert200(response,
                        'Response body is : ' + response.data.decode('utf-8'))
@@ -29,4 +25,5 @@ class TestAuthController(BaseTestCase):
 
 if __name__ == '__main__':
     import unittest
+
     unittest.main()

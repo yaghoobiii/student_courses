@@ -2,10 +2,6 @@
 
 from __future__ import absolute_import
 
-from flask import json
-from six import BytesIO
-
-from swagger_server.models.course import Course  # noqa: E501
 from swagger_server.test import BaseTestCase
 
 
@@ -37,4 +33,5 @@ class TestCourseController(BaseTestCase):
 
 if __name__ == '__main__':
     import unittest
+
     unittest.main()

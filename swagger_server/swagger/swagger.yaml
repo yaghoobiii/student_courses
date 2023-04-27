@@ -21,7 +21,7 @@ paths:
                 $ref: '#/components/schemas/HTML'
       x-openapi-router-controller: swagger_server.controllers.html_controller
   /login:
-    post:
+    get:
       tags:
       - Auth
       summary: Login interface for students

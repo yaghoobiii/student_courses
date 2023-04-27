@@ -10,32 +10,25 @@
 <div id="login_box">
   <img src="img/user.png" id="user_icon">
   <h1>Login Here</h1>
-  <form id="login" action="/login" method="post">
+  <form id="login_form">
     <label for="user_id">شناسه</label>
-    <input type="text" id="user_id" name="user_id" placeholder="شناسه را وارد کنید">
+    <input type="number" id="user_id" name="user_id" placeholder="شناسه را وارد کنید">
     <label for="password">رمز عبور</label>
     <input type="password" id="password" name="password" placeholder="رمزعبور را وارد کنید">
-    <input type="submit" value="Login">
+    <input type="button" id="login" value="Login">
   </form>
 </div>
-<script type="text/javascript">
-    import { AuthApi, ApiClient } from "./js";
+<script type="module">
+    import {AuthApi, ApiClient} from "./js/index";
 
     let api = new AuthApi(new ApiClient());
 
-    $("#login").submit(function (e) {
-        e.preventDefault(); // avoid to execute the actual submit of the form.
+    $("#login").click(() => {
         api.login($("#user_id").val(), $("#password").val(), function (error, data, response) {
             alert(error + " ; " + data + " ; " + response);
         });
-        /*$.ajax({
-            type: "POST",
-            url: $(this).attr('action'),
-            data: $(this).serialize(), // serializes the form's elements.
-            success: function (data) {
-                alert(data); // show response from the PYTHON script.
-            },
-            error: (e) => alert(JSON.stringify(e))
+        /*$.get("/login", $("#login_form").serialize(), function (data) {
+            alert(data); // show response from the PYTHON script.
         });*/
     });
 </script>

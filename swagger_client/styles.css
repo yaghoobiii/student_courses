@@ -45,7 +45,7 @@ h1 {
     margin-bottom: 20px;
 }
 
-#login_box input[type="text"], input[type="password"] {
+#login_box input[type="number"], input[type="password"] {
     border: none;
     border-bottom: 1px solid #ffffff;
     background: transparent;
@@ -55,7 +55,7 @@ h1 {
     font-size: 16px;
 }
 
-#login_box input[type="submit"] {
+#login {
     border: none;
     outline: none;
     height: 40px;
@@ -65,7 +65,7 @@ h1 {
     border-radius: 20px;
 }
 
-#login_box input[type="submit"]:hover {
+#login:hover {
     cursor: pointer;
     background: gray;
     color: #000000;

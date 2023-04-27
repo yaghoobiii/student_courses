@@ -80,7 +80,7 @@ export class AuthApi {
       let returnType = LoginStatus;
 
       return this.apiClient.callApi(
-        '/login', 'POST',
+        '/login', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

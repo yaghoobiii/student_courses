@@ -1,4 +1,5 @@
 from swagger_server.models.login_status import LoginStatus  # noqa: E501
+from swagger_server.models.user import User  # noqa: E501
 from swagger_server import util
 
 
@@ -14,4 +15,4 @@ def login(user_id, password):  # noqa: E501
 
     :rtype: LoginStatus
     """
-    return 'do some magic!'
+    return LoginStatus(password, User(int(user_id), "Ghazanfar", 0))

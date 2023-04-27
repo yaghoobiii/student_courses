@@ -11,27 +11,32 @@
   <img src="img/user.png" id="user_icon">
   <h1>Login Here</h1>
   <form id="login" action="/login" method="post">
-    <label for="user">شناسه</label>
-    <input type="text" id="user" name="user_id" placeholder="Enter Username">
-    <label for="pass">رمز عبور</label>
-    <input type="password" id="pass" name="password" placeholder="Enter Password">
+    <label for="user_id">شناسه</label>
+    <input type="text" id="user_id" name="user_id" placeholder="شناسه را وارد کنید">
+    <label for="password">رمز عبور</label>
+    <input type="password" id="password" name="password" placeholder="رمزعبور را وارد کنید">
     <input type="submit" value="Login">
   </form>
 </div>
 <script type="text/javascript">
+    import { AuthApi, ApiClient } from "./js";
+
+    let api = new AuthApi(new ApiClient());
+
     $("#login").submit(function (e) {
         e.preventDefault(); // avoid to execute the actual submit of the form.
-        $.ajax({
+        api.login($("#user_id").val(), $("#password").val(), function (error, data, response) {
+            alert(error + " ; " + data + " ; " + response);
+        });
+        /*$.ajax({
             type: "POST",
             url: $(this).attr('action'),
             data: $(this).serialize(), // serializes the form's elements.
             success: function (data) {
                 alert(data); // show response from the PYTHON script.
             },
-            error: function (e) {
-                alert(JSON.stringify(e));
-            }
-        });
+            error: (e) => alert(JSON.stringify(e))
+        });*/
     });
 </script>
 </body>

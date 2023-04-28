@@ -1,6 +1,6 @@
 from swagger_server.models.login_status import LoginStatus  # noqa: E501
 from swagger_server.models.user import User  # noqa: E501
-from swagger_server import util
+from swagger_server.util import db
 
 
 def login(user_id, password):  # noqa: E501
@@ -15,4 +15,6 @@ def login(user_id, password):  # noqa: E501
 
     :rtype: LoginStatus
     """
-    return LoginStatus(password, User(int(user_id), "Ghazanfar", 0))
+    raw_user = db.cursor().execute("SELECT name, type FROM user WHERE id = ? AND password = ?", [user_id, password]) \
+        .fetchone()
+    return LoginStatus(password, User(int(user_id), raw_user[0], raw_user[1]))

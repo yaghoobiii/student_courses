@@ -57,7 +57,7 @@ paths:
       operationId: courses
       parameters:
       - name: token
-        in: cookie
+        in: query
         required: true
         style: form
         explode: true

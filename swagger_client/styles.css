@@ -1,6 +1,8 @@
-body {
-    margin: 0;
+* {
     padding: 0;
+    margin: 0;
+}
+body {
     background: url("img/university.jpg") center;
     font-family: sans-serif;
 }
@@ -26,25 +28,21 @@ body {
     top: -50px;
     left: calc(50% - 50px);
 }
-
 h1 {
     margin: 0;
     padding: 0 0 20px;
     text-align: center;
     font-size: 22px;
 }
-
 #login_box p {
     margin: 0;
     padding: 0;
     font-weight: bold;
 }
-
 #login_box input {
     width: 100%;
     margin-bottom: 20px;
 }
-
 #login_box input[type="number"], input[type="password"] {
     border: none;
     border-bottom: 1px solid #ffffff;
@@ -54,7 +52,6 @@ h1 {
     color: #ffffff;
     font-size: 16px;
 }
-
 #login {
     border: none;
     outline: none;
@@ -64,9 +61,48 @@ h1 {
     font-size: 18px;
     border-radius: 20px;
 }
-
 #login:hover {
     cursor: pointer;
     background: gray;
     color: #000000;
+}
+
+main {
+    width: 90%;
+    height: auto;
+    margin: auto;
+}
+h1 {
+    margin: 50px auto;
+    width: 200px;
+}
+table {
+    width: 100%;
+    margin: 10px 0 2px 6px;
+    table-layout: auto;
+    color: #757575;
+    text-align: center;
+    background: #ffffff;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+table tr {
+    border: 1px solid #757575;
+}
+table tr th, td {
+    padding: 10px 5px;
+}
+td:first-child {
+    width: 100px;
+}
+td input {
+    margin-left: 30px;
+}
+table label {
+    cursor: pointer;
+}
+table input {
+    width: 20px;
+    height: 20px;
+    float: left;
 }

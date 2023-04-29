@@ -2,7 +2,7 @@ openapi: 3.0.0
 info:
   title: student-courses
   description: The API for the Maryam's homework
-  version: 2.1.0
+  version: 2.3.0
 servers:
 - url: /
 paths:
@@ -90,7 +90,7 @@ paths:
           type: integer
           format: int32
       - name: token
-        in: cookie
+        in: query
         required: true
         style: form
         explode: true
@@ -120,7 +120,7 @@ paths:
           type: integer
           format: int32
       - name: token
-        in: cookie
+        in: query
         required: true
         style: form
         explode: true
@@ -161,7 +161,7 @@ paths:
           type: integer
           format: int32
       - name: token
-        in: cookie
+        in: query
         required: true
         style: form
         explode: true
@@ -197,7 +197,7 @@ paths:
           type: integer
           format: int32
       - name: token
-        in: cookie
+        in: query
         required: true
         style: form
         explode: true

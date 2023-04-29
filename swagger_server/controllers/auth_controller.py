@@ -17,4 +17,7 @@ def login(user_id, password):  # noqa: E501
     """
     raw_user = db.cursor().execute("SELECT name, type FROM user WHERE id = ? AND password = ?", [user_id, password]) \
         .fetchone()
-    return LoginStatus(password, User(int(user_id), raw_user[0], raw_user[1]))
+    if raw_user is not None:
+        return LoginStatus(password, User(int(user_id), raw_user[0], raw_user[1]))
+    else:
+        return LoginStatus(None, None)

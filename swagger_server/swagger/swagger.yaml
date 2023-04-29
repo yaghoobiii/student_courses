@@ -43,7 +43,7 @@ paths:
           type: string
       responses:
         "200":
-          description: The student has logged into their account.
+          description: The status of the authentication
           content:
             application/json:
               schema:

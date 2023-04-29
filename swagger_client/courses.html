@@ -6,217 +6,190 @@
   <link rel="stylesheet" type="text/css" href="styles.css">
   <script type="text/javascript" src="tools/jquery-3.6.4.min.js"></script>
   <script type="text/javascript" src="tools/jquery.cookie.js"></script>
-  <style type="text/css">
-    *{
-        padding: 0;
-        margin: 0;
-    }
-    section{
-        width: 90%;
-        height: auto;
-        margin: auto;
-
-    }
-    h1{
-        margin:50px auto ;
-        width: 200px;
-    }
-    table{
-        width: 100%;
-        margin: 10px 0px 2px 6px;
-        table-layout:auto ;
-        color: #757575;
-        text-align: center;
-        background: #ffffff;
-        border-collapse: collapse;
-        border-spacing:0;
-    }
-    table tr{
-        border: 1px solid #757575;
-    }
-    table tr th,td{
-        padding: 10px 5px;
-    }
-    td:first-child{
-        width: 100px;
-    }
-    td input{
-        margin-left: 30px;
-    }
-    button{
-        padding:8px 10px ;
-        margin: 10px;
-        border: none;
-        outline: none;
-        background: red;
-        color: white;
-        font-weight: bold;
-        display: none;
-
-    }
-    label{
-        cursor: pointer;
-    }
-    input{
-        width: 20px;
-        height: 20px;
-        float: left;
-    }
+  <style>
+      * {
+          padding: 0;
+          margin: 0;
+      }
+      section {
+          width: 90%;
+          height: auto;
+          margin: auto;
+      }
+      h1 {
+          margin: 50px auto;
+          width: 200px;
+      }
+      table {
+          width: 100%;
+          margin: 10px 0 2px 6px;
+          table-layout: auto;
+          color: #757575;
+          text-align: center;
+          background: #ffffff;
+          border-collapse: collapse;
+          border-spacing: 0;
+      }
+      table tr {
+          border: 1px solid #757575;
+      }
+      table tr th, td {
+          padding: 10px 5px;
+      }
+      td:first-child {
+          width: 100px;
+      }
+      td input {
+          margin-left: 30px;
+      }
+      button {
+          padding: 8px 10px;
+          margin: 10px;
+          border: none;
+          outline: none;
+          background: red;
+          color: white;
+          font-weight: bold;
+          display: none;
+      }
+      label {
+          cursor: pointer;
+      }
+      input {
+          width: 20px;
+          height: 20px;
+          float: left;
+      }
   </style>
-
-
 </head>
 
 <body>
 <section>
   <h1>
-user details
+    user details
   </h1>
   <table>
     <thead>
     <tr>
-      <td><label for="SelectAll"><input type = "checkbox" id="SelectAll"
-      NAME="">SelectAll</label></td>
-       <th>id</th>
-       <th>Teacher_name</th>
-       <th>Name</th>
-       <th>Week_day</th>
-       <th>Start_time</th>
-       <th>End_time</th>
+      <td><label for="SelectAll"><input type="checkbox" id="SelectAll"
+                                        NAME="">SelectAll</label></td>
+      <th>id</th>
+      <th>Teacher_name</th>
+      <th>Name</th>
+      <th>Week_day</th>
+      <th>Start_time</th>
+      <th>End_time</th>
       <th>Action</th>
     </tr>
     </thead>
 
-  <tbody>
-  <tr>
-    <td><input type="checkbox" class="select" name=""></td>
-     <td>1</td>
-     <td>مریم یزدی</td>
-     <td>ریاضی</td>
-     <td>پنجشنبه</td>
-     <td>18:30</td>
-     <td>20:00</td>
-    <td><i class="fa fa-edit"></i> <i class="fa fa-trash"></i> </td>
-  </tr>
+    <tbody>
     <tr>
-    <td><input type="checkbox" class="select" name=""></td>
-     <td>2</td>
-     <td>رامین یزدی</td>
-     <td>شبکه</td>
-     <td>چهارشنبه</td>
-     <td>15:00</td>
-     <td>17:00</td>
-    <td><i class="fa fa-edit"></i> <i class="fa fa-trash"></i> </td>
-  </tr>
+      <td><input type="checkbox" class="select" name=""></td>
+      <td>1</td>
+      <td>مریم یزدی</td>
+      <td>ریاضی</td>
+      <td>پنجشنبه</td>
+      <td>18:30</td>
+      <td>20:00</td>
+      <td><i class="fa fa-edit"></i> <i class="fa fa-trash"></i></td>
+    </tr>
     <tr>
-    <td><input type="checkbox" class="select" name=""></td>
-     <td>3</td>
-     <td>یاسررستمی</td>
-     <td>مهندسی نرم افزار</td>
-     <td>شنبه</td>
-     <td>12:00</td>
-     <td>14:00</td>
-    <td><i class="fa fa-edit"></i> <i class="fa fa-trash"></i> </td>
-  </tr>
+      <td><input type="checkbox" class="select" name=""></td>
+      <td>2</td>
+      <td>رامین یزدی</td>
+      <td>شبکه</td>
+      <td>چهارشنبه</td>
+      <td>15:00</td>
+      <td>17:00</td>
+      <td><i class="fa fa-edit"></i> <i class="fa fa-trash"></i></td>
+    </tr>
     <tr>
-    <td><input type="checkbox" class="select" name=""></td>
-     <td>4</td>
-     <td>مرضیه بهرامی</td>
-     <td>داده کاوی</td>
-     <td>یکشنبه</td>
-     <td>9:00</td>
-     <td>12:00</td>
-    <td><i class="fa fa-edit"></i> <i class="fa fa-trash"></i> </td>
-  </tr>
+      <td><input type="checkbox" class="select" name=""></td>
+      <td>3</td>
+      <td>یاسررستمی</td>
+      <td>مهندسی نرم افزار</td>
+      <td>شنبه</td>
+      <td>12:00</td>
+      <td>14:00</td>
+      <td><i class="fa fa-edit"></i> <i class="fa fa-trash"></i></td>
+    </tr>
     <tr>
-    <td><input type="checkbox" class="select" name=""></td>
-     <td>5</td>
-     <td>ارسلان کریمی</td>
-     <td>اصول طراحی سیستم </td>
-     <td>پنجشنبه</td>
-     <td>11:00</td>
-     <td>13:00</td>
-    <td><i class="fa fa-edit"></i> <i class="fa fa-trash"></i> </td>
-  </tr>
+      <td><input type="checkbox" class="select" name=""></td>
+      <td>4</td>
+      <td>مرضیه بهرامی</td>
+      <td>داده کاوی</td>
+      <td>یکشنبه</td>
+      <td>9:00</td>
+      <td>12:00</td>
+      <td><i class="fa fa-edit"></i> <i class="fa fa-trash"></i></td>
+    </tr>
     <tr>
-    <td><input type="checkbox" class="select" name=""></td>
-     <td>6</td>
-     <td>محسن محسنی</td>
-     <td>سیستم عامل</td>
-     <td>شنبه</td>
-     <td>8:00</td>
-     <td>10:00</td>
-    <td><i class="fa fa-edit"></i> <i class="fa fa-trash"></i> </td>
-  </tr>
+      <td><input type="checkbox" class="select" name=""></td>
+      <td>5</td>
+      <td>ارسلان کریمی</td>
+      <td>اصول طراحی سیستم</td>
+      <td>پنجشنبه</td>
+      <td>11:00</td>
+      <td>13:00</td>
+      <td><i class="fa fa-edit"></i> <i class="fa fa-trash"></i></td>
+    </tr>
     <tr>
-    <td><input type="checkbox" class="select" name=""></td>
-     <td>7</td>
-     <td>علی محسنی</td>
-     <td>معماری کامپیوتر</td>
-     <td>پنجشنبه</td>
-     <td>16:00</td>
-     <td>18:00</td>
-    <td><i class="fa fa-edit"></i> <i class="fa fa-trash"></i> </td>
-  </tr>
+      <td><input type="checkbox" class="select" name=""></td>
+      <td>6</td>
+      <td>محسن محسنی</td>
+      <td>سیستم عامل</td>
+      <td>شنبه</td>
+      <td>8:00</td>
+      <td>10:00</td>
+      <td><i class="fa fa-edit"></i> <i class="fa fa-trash"></i></td>
+    </tr>
     <tr>
-    <td><input type="checkbox" class="select" name=""></td>
-     <td>8</td>
-     <td>سید محسن طباطبایی</td>
-     <td>تاریخ تحلیلی</td>
-     <td>شنبه</td>
-     <td>12:00</td>
-     <td>14:00</td>
-    <td><i class="fa fa-edit"></i> <i class="fa fa-trash"></i> </td>
-  </tr>
+      <td><input type="checkbox" class="select" name=""></td>
+      <td>7</td>
+      <td>علی محسنی</td>
+      <td>معماری کامپیوتر</td>
+      <td>پنجشنبه</td>
+      <td>16:00</td>
+      <td>18:00</td>
+      <td><i class="fa fa-edit"></i> <i class="fa fa-trash"></i></td>
+    </tr>
     <tr>
-    <td><input type="checkbox" class="select" name=""></td>
-     <td>9</td>
-     <td>علی سلیمانی</td>
-     <td>هوش مصنوعی</td>
-     <td>شنبه</td>
-     <td>08:00</td>
-     <td>10:00</td>
-    <td><i class="fa fa-edit"></i> <i class="fa fa-trash"></i> </td>
-  </tr>
+      <td><input type="checkbox" class="select" name=""></td>
+      <td>8</td>
+      <td>سید محسن طباطبایی</td>
+      <td>تاریخ تحلیلی</td>
+      <td>شنبه</td>
+      <td>12:00</td>
+      <td>14:00</td>
+      <td><i class="fa fa-edit"></i> <i class="fa fa-trash"></i></td>
+    </tr>
     <tr>
-    <td><input type="checkbox" class="select" name=""></td>
-     <td>10</td>
-     <td>علی محسنی</td>
-     <td>ریزپردازنده</td>
-     <td>پنجشنبه</td>
-     <td>12:00</td>
-     <td>15:00</td>
-    <td><i class="fa fa-edit"></i> <i class="fa fa-trash"></i> </td>
-  </tr>
-  </tbody>
-    </table>
-  <button> <i class="fa fa-trash"></i>Delete - all </button>
+      <td><input type="checkbox" class="select" name=""></td>
+      <td>9</td>
+      <td>علی سلیمانی</td>
+      <td>هوش مصنوعی</td>
+      <td>شنبه</td>
+      <td>08:00</td>
+      <td>10:00</td>
+      <td><i class="fa fa-edit"></i> <i class="fa fa-trash"></i></td>
+    </tr>
+    <tr>
+      <td><input type="checkbox" class="select" name=""></td>
+      <td>10</td>
+      <td>علی محسنی</td>
+      <td>ریزپردازنده</td>
+      <td>پنجشنبه</td>
+      <td>12:00</td>
+      <td>15:00</td>
+      <td><i class="fa fa-edit"></i> <i class="fa fa-trash"></i></td>
+    </tr>
+    </tbody>
+  </table>
+  <button><i class="fa fa-trash"></i>Delete - all</button>
 </section>
-
 
 
 <script type="text/javascript" src="courses.js"></script>
 </body>
 </html>
-<script type="text/javascript">
-  let main = document.getElementById('SelectAll');
-  let select = document.getElementsByClassName('select')
-  main.onclick = ()=>{
-      if (main.checked== true)
-      {
-          for(let i = 0 ; i<select.length;i++)
-          {
-              select[i].checked=true;
-              document.querySelector('button').style.display = 'block';
-          }
-      }
-      else {
-          for(let i = 0 ; i<select.length;i++)
-          {
-              select[i].checked=false;
-              document.querySelector('button').style.display = 'none';
-          }
-
-      }
-  }
-</script>

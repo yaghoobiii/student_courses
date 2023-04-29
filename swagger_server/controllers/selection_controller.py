@@ -1,6 +1,5 @@
 from typing import List
 
-from swagger_server.models.course import Course  # noqa: E501
 from swagger_server.models.selection import Selection  # noqa: E501
 from swagger_server.util import db
 
@@ -20,6 +19,7 @@ def destroy_selection(student, course, token):  # noqa: E501
     :rtype: None
     """
     db.cursor().execute("DELETE FROM selection WHERE student = ? AND course = ?", [student, course])
+    db.commit()
     return "ok"
 
 
@@ -38,6 +38,7 @@ def insert_selection(student, course, token):  # noqa: E501
     :rtype: None
     """
     db.cursor().execute("INSERT INTO selection VALUES(?, ?)", [student, course])
+    db.commit()
     return "ok"
 
 
@@ -54,6 +55,6 @@ def selection_by_student(student_id, token):  # noqa: E501
     :rtype: List[Selection]
     """
     ret: List[Selection] = list()
-    for i in db.cursor().execute("SELECT * FROM selection WHERE student = ?", [student_id]).fetchall():
+    for i in db.cursor().execute("SELECT * FROM selection WHERE student = ?", [int(student_id)]).fetchall():
         ret.append(Selection(i[0], i[1]))  # util.deserialize_model(i, Selection)
     return ret

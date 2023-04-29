@@ -138,7 +138,7 @@ paths:
                 x-content-type: application/json
       x-openapi-router-controller: swagger_server.controllers.selection_controller
   /selections/create:
-    post:
+    get:
       tags:
       - Selection
       summary: Create a selection
@@ -174,7 +174,7 @@ paths:
           description: invalid
       x-openapi-router-controller: swagger_server.controllers.selection_controller
   /selections/destroy:
-    post:
+    get:
       tags:
       - Selection
       summary: Destroy a selection
